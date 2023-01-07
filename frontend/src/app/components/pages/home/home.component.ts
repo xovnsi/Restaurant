@@ -3,6 +3,7 @@ import {Dishes} from "../../../shared/models/Dishes";
 import {FoodService} from "../../../services/food.service";
 import {ActivatedRoute} from "@angular/router";
 import {CartService} from "../../../services/cart.service";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-home',
@@ -13,13 +14,18 @@ export class HomeComponent {
 
   dishes:Dishes[] = [];
   constructor(private foodService:FoodService, activatedRoute:ActivatedRoute, private cartService:CartService) {
+    let dishesObservable: Observable<Dishes[]>;
     activatedRoute.params.subscribe((params) => {
       if(params.searchTerm)
-        this.dishes = foodService.getAllDishesBySearch(params.searchTerm);
+        dishesObservable= foodService.getAllDishesBySearch(params.searchTerm);
       else if(params.tag)
-        this.dishes = this.foodService.getAllFoodsByTag(params.tag);
+        dishesObservable = this.foodService.getAllFoodsByTag(params.tag);
       else
-        this.dishes = foodService.getAll();
+        dishesObservable = foodService.getAll();
+
+      dishesObservable.subscribe((serverDishes) => {
+        this.dishes = serverDishes;
+      })
     })
   }
 

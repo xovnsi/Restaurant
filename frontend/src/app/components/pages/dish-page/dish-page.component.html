@@ -1,5 +1,5 @@
 <app-not-found
-  [visible] = "!dish.id"
+  [visible] = "!dish"
   notFoundMessage="Food not found"
   resetLinkText="Back to homepage">
 </app-not-found>
@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-<div *ngIf="dish.id" class="container">
+<div *ngIf="dish" class="container">
   <img [src]="dish.imageUrl" [alt]="dish.name"/>
 
   <div class="details">
@@ -50,7 +50,7 @@
 
     <div class="info">
       <button [hidden]="(dish.quantity<=0)" (click)="addToCart()" class="order" id="order">+</button>
-      <button [hidden]="dish.quantity === dish.maxQuantity" (click)="removeFromCart(dish)" class="resign" id="resign">-</button>
+      <button (click)="removeFromCart(dish)" class="resign" id="resign">-</button>
     </div>
 
   </div>

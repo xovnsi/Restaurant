@@ -14,10 +14,10 @@ export class SearchComponent {
     activatedRoute.params.subscribe((params) =>{
     if(params.searchTerm) {
       this.searchTerm = params.searchTerm;
-      this.dishes = foodService.getAllDishesBySearch(params.searchTerm);
+      foodService.getAllDishesBySearch(params.searchTerm).subscribe(search => this.dishes = search);
     }
     else
-      this.dishes = foodService.getAll();
+      foodService.getAll().subscribe(search => this.dishes = search);
     });
   }
 

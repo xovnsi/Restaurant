@@ -15,11 +15,12 @@ export class DishPageComponent {
   orderDisabled: boolean = false;
   resignDisabled: boolean = false;
 
-  constructor(activatedRoute:ActivatedRoute, foodService:FoodService,
-              private cartService:CartService, private router: Router) {
+  constructor(activatedRoute:ActivatedRoute, foodService:FoodService, private cartService:CartService, private router: Router) {
     activatedRoute.params.subscribe((params) =>{
         if(params.id)
-          this.dish = foodService.getDishById(params.id);
+          foodService.getDishById(params.id).subscribe((serverDish) => {
+            this.dish = serverDish;
+          });
     })
   }
 
