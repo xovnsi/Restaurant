@@ -1,0 +1,43 @@
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin-top: 3rem;
+}
+
+.input-container{
+  margin: 0.5rem 0;
+  color: #091e62;
+  font-weight: bold;
+}
+
+.details{
+  width: 28rem;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.error-list{
+  color: #091e62;
+}
+
+.button button{
+  border: none;
+  margin: 0.5rem 0;
+  background-color: #091e62;
+  color: whitesmoke;
+  padding: 0.5rem;
+  font-size: 0.9rem;
+  border-radius: 0.5rem;
+  width: 5rem;
+}
+.button{
+  display: flex;
+  /*width: 35%;*/
+  /*justify-content: center;*/
+}
