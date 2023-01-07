@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="search.component.css">
+</head>
+<body>
+  <div>
+    <input #s type="text" placeholder="Search dish"
+           (keyup.enter)="search(s.value)"
+            [value] = "searchTerm" />
+  </div>
+</body>
+<!--  <select name="categories" id="categories">-->
+<!--    <option #o *ngFor="let dish of dishes">-->
+<!--      <p *ngIf="dish..includes(+dish.id)"></p>-->
+<!--      {{dish.cuisine}}-->
+<!--    </option>-->
+<!--  </select>-->

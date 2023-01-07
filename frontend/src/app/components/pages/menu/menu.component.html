@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Home Page</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="menu.component.css">
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <a routerLink="/" class="logo">Restaurant</a>
+    <nav>
+      <ul>
+        <li>
+          <a routerLink="/login">Login</a>
+          <a routerLink="/sign-up">Sign up</a>
+        </li>
+        <li class="menu-container">
+          <a routerLink="/dashboard">John</a>
+          <div class="menu">
+            <a routerLink="/profile">Profile</a>
+            <a routerLink="/orders">Orders</a>
+            <a>Logout</a>
+          </div>
+        </li>
+        <li [style]="{'background-color': cartQuantity < 10 ? 'orange' : '#0a4498'}">
+          <a routerLink="/cart-page" [style]="{'color': 'white'}">
+            Cart <span>{{cartQuantity}}</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+</body>

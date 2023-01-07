@@ -1,0 +1,54 @@
+<app-search></app-search>
+<app-tags></app-tags>
+<app-not-found
+  [visible]="!dishes || !dishes.length"
+  resetLinkText="Reset search">
+</app-not-found>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Home Page</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="home.component.css">
+</head>
+
+<body>
+<ul>
+  <li *ngFor="let dish of dishes">
+    <a routerLink="/dishes/{{dish.id}}" [ngStyle]="{'background-color': (dish.quantity > 3) ? 'white' : ((dish.quantity === 0) ?'gray' : 'rgba(184,187,186,0.3)')}">
+      <img [ngStyle]="{'background-color': (dish.quantity === 0)? 'gray' : ''} " [src]="dish.imageUrl" [alt]="dish.name"/>
+
+      <div class="content">
+        <div class="name">
+          {{dish.name | titlecase}}
+        </div>
+        <div class="product-item-info">
+          <span>{{dish.cuisine | titlecase}}</span>
+          <span>{{dish.type}}</span>
+          <span>{{dish.category}}</span>
+        </div>
+        <div class="price">
+          <span> {{dish.price | currency}}</span>
+        </div>
+        <div class="product-item-footer">
+          <div class="ingredients">
+            <span *ngFor="let ingredient of dish.ingredients">
+              {{ingredient}}
+            </span>
+          </div>
+        </div>
+
+        <span class="quantity">Quantity: {{dish.quantity}}</span>
+        <div class="stars">
+          <star-rating [value]="dish.ratings" [totalstars]="5" checkedcolor="red" uncheckedcolor="black" size="22px"
+                       [readonly]="true">
+          </star-rating>
+        </div>
+
+      </div>
+    </a>
+  </li>
+</ul>
+</body>

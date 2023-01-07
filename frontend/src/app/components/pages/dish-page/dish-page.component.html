@@ -1,0 +1,58 @@
+<app-not-found
+  [visible] = "!dish.id"
+  notFoundMessage="Food not found"
+  resetLinkText="Back to homepage">
+</app-not-found>
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dish Page</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="dish-page.component.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<div *ngIf="dish.id" class="container">
+  <img [src]="dish.imageUrl" [alt]="dish.name"/>
+
+  <div class="details">
+    <div class="header">
+      <span class="name">
+        {{dish.name}}
+      </span>
+    </div>
+<!--    <div class="rating">-->
+<!--      <star-rating-->
+<!--        [value]="dish.ratings" [totalstars]="5"-->
+<!--        checkedcolor="red" uncheckedcolor="black" size="25px"-->
+<!--        [readonly]="true">-->
+<!--      </star-rating>-->
+<!--    </div>-->
+
+    <div class="description">
+      {{dish.description}}
+    </div>
+
+    <div class="price">
+      <span> {{dish.price | currency}}</span>
+    </div>
+
+    <div class="ratings">
+      <span style="margin-right: 0.5rem">Rate dish </span>
+      <span class="fa fa-star" id="s1"></span>
+      <span class="fa fa-star" id="s2"></span>
+      <span class="fa fa-star" id="s3"></span>
+      <span class="fa fa-star" id="s4"></span>
+      <span class="fa fa-star" id="s5"></span>
+    </div>
+
+    <div class="info">
+      <button [hidden]="(dish.quantity<=0)" (click)="addToCart()" class="order" id="order">+</button>
+      <button [hidden]="dish.quantity === dish.maxQuantity" (click)="removeFromCart(dish)" class="resign" id="resign">-</button>
+    </div>
+
+  </div>
+</div>
+</body>
