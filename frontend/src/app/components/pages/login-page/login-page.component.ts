@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {UserService} from "../../../services/user.service";
+import {ActivatedRoute, Router, RoutesRecognized} from "@angular/router";
 
 @Component({
   selector: 'app-login-page',
@@ -9,13 +11,17 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 export class LoginPageComponent implements OnInit{
   loginForm!: FormGroup;
   isSubmitted = false;
-  constructor(private formBuilder: FormBuilder) { }
+  returnUrl = '';
+  constructor(private formBuilder: FormBuilder, private userService: UserService,
+              private activatedRoute: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
-      nick: ['', [Validators.required]],
+      username: ['', [Validators.required]],
       password: ['', [Validators.required]]
     });
+
+    this.returnUrl = this.activatedRoute.snapshot.queryParams.returnUrl; //latest value
   }
 
   get fc(){
@@ -26,7 +32,9 @@ export class LoginPageComponent implements OnInit{
     this.isSubmitted = true;
     if(this.loginForm.invalid) return;
 
-    alert(`nick: ${this.fc.nick.value},
-    password: ${this.fc.password.value}`);
+    this.userService.login({username: this.fc.username.value,
+      password: this.fc.password.value}).subscribe(() => {
+        this.router.navigateByUrl(this.returnUrl);
+    });
   }
 }

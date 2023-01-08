@@ -14,15 +14,17 @@
     <nav>
       <ul>
         <li>
-          <a routerLink="/login">Login</a>
+          <li *ngIf="!isAuth">  <!-- user logged out -->
+            <a routerLink="/login">Login</a>
           <a routerLink="/sign-up">Sign up</a>
-        </li>
-        <li class="menu-container">
-          <a routerLink="/dashboard">John</a>
+         </li>
+
+        <li *ngIf="isAuth" class="menu-container"> <!-- only when user token is valid (logged in) -->
+          <a routerLink="/dashboard">{{user.name}}</a>
           <div class="menu">
             <a routerLink="/profile">Profile</a>
             <a routerLink="/orders">Orders</a>
-            <a>Logout</a>
+            <a (click)="logout()">Logout</a>
           </div>
         </li>
         <li [style]="{'background-color': cartQuantity < 10 ? 'orange' : '#0a4498'}">

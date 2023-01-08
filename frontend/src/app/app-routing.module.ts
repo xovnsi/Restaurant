@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: 'tag/:tag', component: HomeComponent },
   { path: 'dishes/:id', component: DishPageComponent },
   { path: 'cart-page', component: CartPageComponent},
-  { path: 'login-page', component: LoginPageComponent}
+  { path: 'login', component: LoginPageComponent}
 
 ];
 
