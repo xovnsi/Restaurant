@@ -5,40 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="90807970-c86a-443d-bbdf-c5c7865f1a54" name="Changes" comment="login page component">
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/components/partials/input-container/input-container.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/components/partials/input-container/input-container.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/components/partials/input-container/input-container.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/components/partials/input-container/input-container.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/components/partials/input-validation/input-validation.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/components/partials/input-validation/input-validation.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/components/partials/input-validation/input-validation.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/components/partials/input-validation/input-validation.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/components/partials/text-input/text-input.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/components/partials/text-input/text-input.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/components/partials/text-input/text-input.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/components/partials/text-input/text-input.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/services/user.service.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/services/user.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/shared/Interfaces/IUserLogin.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/shared/models/user.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/configs/database.config.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/routers/dishes.router.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/routers/user.router.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/data.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/data.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/server.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/server.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/angular.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/pages/login-page/login-page.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/components/pages/login-page/login-page.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/pages/login-page/login-page.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/components/pages/login-page/login-page.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/pages/login-page/login-page.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/components/pages/login-page/login-page.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/pages/menu/menu.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/components/partials/menu/menu.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/pages/menu/menu.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/components/partials/menu/menu.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/pages/menu/menu.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/components/partials/menu/menu.component.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/pages/menu/menu.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/components/partials/menu/menu.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/constants/urls.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/shared/constants/urls.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +74,8 @@
       <workItem from="1673097929636" duration="3960000" />
       <workItem from="1673113974974" duration="3992000" />
       <workItem from="1673123925762" duration="2699000" />
-      <workItem from="1673179952275" duration="3197000" />
+      <workItem from="1673179952275" duration="4671000" />
+      <workItem from="1673197805108" duration="1662000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1673098339833</created>
@@ -123,11 +98,21 @@
       <option name="project" value="LOCAL" />
       <updated>1673115748422</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="login page component">
+      <created>1673184357454</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1673184357454</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName=".env" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
