@@ -46,3 +46,9 @@ form{
   cursor: pointer;
   opacity: 1;
 }
+
+.register{
+  display: flex;
+  justify-content: center;
+
+}

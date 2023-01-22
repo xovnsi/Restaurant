@@ -20,6 +20,7 @@ export class MenuComponent {
     userService.userObservable.subscribe((newUser) => {
       this.user = newUser;
     })
+    console.log("tk" + this.user.token + " n" + this.user.name)
   }
 
   logout(){
@@ -27,6 +28,6 @@ export class MenuComponent {
   }
 
   get isAuth(){
-    return this.user.token; //user is logged in
+    return this.user.token;
   }
 }

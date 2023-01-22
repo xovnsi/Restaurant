@@ -15,7 +15,8 @@ export class DishPageComponent {
   orderDisabled: boolean = false;
   resignDisabled: boolean = false;
 
-  constructor(activatedRoute:ActivatedRoute, foodService:FoodService, private cartService:CartService, private router: Router) {
+  constructor(activatedRoute:ActivatedRoute, private foodService:FoodService, private cartService:CartService,
+              private router: Router) {
     activatedRoute.params.subscribe((params) =>{
         if(params.id)
           foodService.getDishById(params.id).subscribe((serverDish) => {
@@ -25,28 +26,15 @@ export class DishPageComponent {
   }
 
   addToCart(){
-    // if(this.dish.quantity == 0){
-    //   this.orderDisabled = true;
-    // }
-    // if(this.dish.quantity < this.dish.maxQuantity){
-    //   this.resignDisabled = false;
-    // }
-
+    // this.dish.quantity -= 1;
+    this.foodService.addToCart(this.dish);
     this.cartService.addToCart(this.dish)
     this.router.navigateByUrl('/cart-page');
   }
 
   removeFromCart(dish:Dishes){
-    // if(dish.quantity == this.dish.maxQuantity){
-    //   this.resignDisabled = true;
-    // }
-    // if(dish.quantity == 1){
-    //   this.orderDisabled = false;
-    // }
-
     this.cartService.removeFromCart(dish);
     this.router.navigateByUrl('/cart-page');
-    dish.quantity += 1;
-
+    // dish.quantity += 1;
   }
 }

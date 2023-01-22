@@ -20,7 +20,6 @@ export class LoginPageComponent implements OnInit{
       username: ['', [Validators.required]],
       password: ['', [Validators.required]]
     });
-
     this.returnUrl = this.activatedRoute.snapshot.queryParams.returnUrl; //latest value
   }
 
@@ -28,12 +27,16 @@ export class LoginPageComponent implements OnInit{
     return this.loginForm.controls;
   }
 
+  get getToken(){
+    return this.userService.user.token;
+  }
+
   submit(){
     this.isSubmitted = true;
     if(this.loginForm.invalid) return;
-
     this.userService.login({username: this.fc.username.value,
-      password: this.fc.password.value}).subscribe(() => {
+      password: this.fc.password.value,
+      token: this.getToken}).subscribe(() => {
         this.router.navigateByUrl(this.returnUrl);
     });
   }

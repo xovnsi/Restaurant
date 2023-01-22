@@ -1,39 +1,28 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Home Page</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="menu.component.css">
-</head>
-<body>
-
 <header>
   <div class="container">
     <a routerLink="/" class="logo">Menu</a>
     <nav>
       <ul>
-        <li>
+
           <li *ngIf="!isAuth">  <!-- user logged out -->
             <a routerLink="/login">Login</a>
-          <a routerLink="/sign-up">Sign up</a>
-         </li>
+            <a routerLink="/register">Register</a>
+          </li>
 
-        <li *ngIf="isAuth" class="menu-container"> <!-- only when user token is valid (logged in) -->
-          <a routerLink="/dashboard">{{user.name}}</a>
-          <div class="menu">
-            <a routerLink="/profile">Profile</a>
-            <a routerLink="/orders">Orders</a>
-            <a (click)="logout()">Logout</a>
-          </div>
-        </li>
-        <li [style]="{'background-color': cartQuantity < 10 ? 'orange' : '#0a4498'}">
-          <a routerLink="/cart-page" [style]="{'color': 'white'}">
-            Cart <span>{{cartQuantity}}</span>
-          </a>
-        </li>
+          <li *ngIf="isAuth" class="menu-container"> <!-- only when user token is valid (logged in) -->
+            <a routerLink="/dashboard">{{user.name}}</a>
+            <div class="menu">
+              <a routerLink="/profile">Profile</a>
+              <a routerLink="/orders">Orders</a>
+              <a (click)="logout()">Logout</a>
+            </div>
+          </li>
+          <li [style]="{'background-color': cartQuantity < 10 ? 'orange' : '#0a4498'}">
+            <a routerLink="/cart-page" [style]="{'color': 'white'}">
+              Cart <span>{{cartQuantity}}</span>
+            </a>
+          </li>
       </ul>
     </nav>
   </div>
 </header>
-</body>

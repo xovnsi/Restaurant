@@ -20,6 +20,7 @@ import { BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { InputContainerComponent } from './components/partials/input-container/input-container.component';
 import { InputValidationComponent } from './components/partials/input-validation/input-validation.component';
 import { TextInputComponent } from './components/partials/text-input/text-input.component';
+import { RegisterPageComponent } from './components/pages/register-page/register-page.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { TextInputComponent } from './components/partials/text-input/text-input.
     LoginPageComponent,
     InputContainerComponent,
     InputValidationComponent,
-    TextInputComponent
+    TextInputComponent,
+    RegisterPageComponent
   ],
     imports: [
         BrowserModule,

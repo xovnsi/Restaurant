@@ -25,9 +25,9 @@
           {{dish.name | titlecase}}
         </div>
         <div class="product-item-info">
-          <span>{{dish.cuisine | titlecase}}</span>
-          <span>{{dish.type}}</span>
-          <span>{{dish.category}}</span>
+          <span *ngFor="let tag of dish.tags">
+              {{tag | titlecase}}
+            </span>
         </div>
         <div class="price">
           <span> {{dish.price | currency}}</span>
@@ -42,7 +42,7 @@
 
         <span class="quantity">Quantity: {{dish.quantity}}</span>
         <div class="stars">
-          <star-rating [value]="dish.ratings" [totalstars]="5" checkedcolor="red" uncheckedcolor="black" size="22px"
+          <star-rating [value]="dish.ratings[0]" [totalstars]="5" checkedcolor="red" uncheckedcolor="black" size="22px"
                        [readonly]="true">
           </star-rating>
         </div>

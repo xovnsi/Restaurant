@@ -16,12 +16,12 @@ export class CartService {
     let cartItem = this.cart.items.find(item => item.dish.id == dish.id);
     if(cartItem) {
       this.changeQuantity(dish.id, cartItem.quantity);
-      dish.quantity -= 1;
+      // dish.quantity -= 1;
       return;
     }
     this.cart.items.push(new CartItems(dish))
     this.setCartToLocalStorage();
-    dish.quantity -= 1;
+    // dish.quantity -= 1;
   }
 
   removeFromCart(dish: Dishes):void{
