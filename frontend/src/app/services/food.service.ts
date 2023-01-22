@@ -45,6 +45,7 @@ export class FoodService {
   addToCart(dish: Dishes){
     console.log("tsdfui", dish);
     console.log(NEW_DISH)
-    this.http.post(NEW_DISH, dish.id).pipe(map((res: any) => {return res}));
+    // this.http.post(NEW_DISH, dish.id).pipe(map((res: any) => {return res}));
+    return this.http.post<any>(NEW_DISH, dish.id).pipe(map((res: any) => {return res}));
   }
 }

@@ -73,7 +73,7 @@ router.post("/addDish",  asyncHandler(async (req, res) => {
         console.log(dish.quantity + " piews ")
         dish.quantity -= 1;
         console.log(dish.quantity + " drugws ")
-
+        await dish.save();
         await DishesModel.updateOne( { "id" : {id} },
             { $set: { "quantity": dish.quantity } });
         const dish2 = await DishesModel.findOne({id});
@@ -82,7 +82,6 @@ router.post("/addDish",  asyncHandler(async (req, res) => {
         // return {"message": "test"}
     }
     res.send(dish);
-
-    }));
+}));
 
 export default router;

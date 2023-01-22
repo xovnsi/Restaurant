@@ -37,4 +37,5 @@ export class DishPageComponent {
     this.router.navigateByUrl('/cart-page');
     // dish.quantity += 1;
   }
+
 }

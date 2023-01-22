@@ -3,6 +3,7 @@ import {BehaviorSubject, Observable} from "rxjs";
 import {Cart} from "../shared/models/Cart";
 import {Dishes} from "../shared/models/Dishes";
 import {CartItems} from "../shared/models/cartItems";
+import {Router} from "@angular/router";
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ import {CartItems} from "../shared/models/cartItems";
 export class CartService {
   private cart:Cart = this.getCartFromLocalStorage();
   private cartSubject: BehaviorSubject<Cart> = new BehaviorSubject(this.cart);
-  constructor() { }
+  constructor(private router: Router) { }
 
   addToCart(dish: Dishes):void{
     let cartItem = this.cart.items.find(item => item.dish.id == dish.id);
@@ -52,6 +53,13 @@ export class CartService {
   clearCart() {
     this.cart = new Cart();
     this.setCartToLocalStorage();
+  }
+
+  orderDishes(){
+    this.cart = new Cart();
+    this.setCartToLocalStorage();
+    this.router.navigateByUrl('/');
+    // dish.quantity += 1;
   }
 
   getCartObservable(): Observable<Cart> {
